@@ -3,11 +3,27 @@
 
 <head>
 
-  <!-- Google Consent Mode v2 — default denied (MUST be before GTM) -->
+  <!-- Google Consent Mode v2 — regional defaults (MUST be before GTM) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
+
+    // Default poza EEA / UK / CH
     gtag('consent', 'default', {
+      ad_storage: 'granted',
+      analytics_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      wait_for_update: 500
+    });
+
+    // Default dla EEA + UK + Switzerland
+    gtag('consent', 'default', {
+      region: [
+        'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU',
+        'IS', 'IE', 'IT', 'LV', 'LI', 'LT', 'LU', 'MT', 'NL', 'NO', 'PL', 'PT', 'RO',
+        'SK', 'SI', 'ES', 'SE', 'GB', 'CH'
+      ],
       ad_storage: 'denied',
       analytics_storage: 'denied',
       ad_user_data: 'denied',
